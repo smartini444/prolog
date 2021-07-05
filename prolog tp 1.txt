@@ -1,0 +1,35 @@
+viveEnLaMansion(Charles).
+viveEnLaMansion(TiaAgatha).
+viveEnLaMansion(Mayordomo).
+
+agathaOdia(Persona):-
+viveEnLaMansion(Persona),
+Persona \= Mayordomo.
+
+charlesOdia(Persona):-
+viveEnLaMansion(Persona),
+Persona \= agathaOdia(Persona.)
+
+
+
+masricoQueAgatha(Persona):-
+viveEnLaMansion(Persona),
+Persona \= agathaOdia.
+
+charlesMato(Persona):- charlesOdia(Persona), masricoQueAgatha(Charles).
+mayordomoMato(Persona):- agathaOdia(Persona), masricoQueAgatha(Mayordomo).
+
+agathaOdia(Mayordomo).
+charlesOdia(Mayordomo).
+
+charlesOdia(_).
+
+agathaOdia(_).
+
+
+
+
+
+
+
+
